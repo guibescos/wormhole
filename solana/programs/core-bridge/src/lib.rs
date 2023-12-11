@@ -18,7 +18,7 @@ pub mod error;
 
 pub mod legacy;
 
-mod processor;
+pub mod processor;
 pub(crate) use processor::*;
 
 #[cfg(feature = "cpi")]
