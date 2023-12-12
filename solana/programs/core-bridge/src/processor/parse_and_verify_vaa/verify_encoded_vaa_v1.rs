@@ -101,11 +101,14 @@ pub fn verify_encoded_vaa_v1(ctx: Context<VerifyEncodedVaaV1>) -> Result<()> {
 
             last_guardian_index = Some(index);
         }
+
+        // Revise the header.
+        header.verified_signatures = vaa.signature_count();
+        header.version = 1;
     }
 
-    // Revise the header.
-    header.status = ProcessingStatus::Verified;
-    header.version = 1;
+    
+
 
     // Finally serialize.
     let acc_data: &mut [_] = &mut ctx.accounts.draft_vaa.data.borrow_mut();

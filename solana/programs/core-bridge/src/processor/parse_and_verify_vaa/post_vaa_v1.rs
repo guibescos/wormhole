@@ -21,7 +21,7 @@ pub struct PostVaaV1<'info> {
     /// using the legacy post vaa instruction. The Core Bridge program will not support posting VAAs
     /// larger than this payload size.
     #[account(
-        constraint = encoded_vaa.status == ProcessingStatus::Verified @ CoreBridgeError::UnverifiedVaa
+        constraint = encoded_vaa.verified_signatures >= 13 @ CoreBridgeError::UnverifiedVaa
     )]
     encoded_vaa: Account<'info, EncodedVaa>,
 

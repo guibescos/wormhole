@@ -55,7 +55,7 @@ pub fn init_encoded_vaa(ctx: Context<InitEncodedVaa>) -> Result<()> {
     (
         <EncodedVaa as anchor_lang::Discriminator>::DISCRIMINATOR,
         Header {
-            status: ProcessingStatus::Writing,
+            verified_signatures: 0,
             write_authority: ctx.accounts.write_authority.key(),
             version: Default::default(),
         },
