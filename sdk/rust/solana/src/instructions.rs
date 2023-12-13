@@ -38,11 +38,11 @@ pub use {
         PostVAAData,
     },
     set_fees::set_fees,
+    upgrade_guardian_set::upgrade_guardian_set,
     verify_signatures::{
         verify_signatures,
         verify_signatures_txs,
     },
-    upgrade_guardian_set::upgrade_guardian_set,
 };
 
 #[cfg(test)]
