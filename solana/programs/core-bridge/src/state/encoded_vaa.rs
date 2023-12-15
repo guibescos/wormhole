@@ -98,7 +98,7 @@ impl EncodedVaa {
         );
 
         require!(
-            Self::status_unsafe(&data) == ProcessingStatus::Writing,
+            Self::status_unsafe(&data) == 0,
             CoreBridgeError::NotInWritingStatus
         );
 
@@ -111,7 +111,7 @@ impl EncodedVaa {
         Ok(true)
     }
 
-    pub(crate) fn status_unsafe(data: &[u8]) -> ProcessingStatus {
+    pub(crate) fn status_unsafe(data: &[u8]) -> u8 {
         AnchorDeserialize::deserialize(&mut &data[8..9]).unwrap()
     }
 
