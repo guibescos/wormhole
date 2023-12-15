@@ -5,7 +5,7 @@ cfg_if::cfg_if! {
     if #[cfg(feature = "localnet")] {
         declare_id!("Bridge1p5gheXUvJ6jGWGeCsgPKgnE3YgdGKRVCMY9o");
     } else if #[cfg(feature = "mainnet")] {
-        declare_id!("G5QrYqAz9hnwgK5rwsgrBM5muk7nUBCrfZgrMuFJv5H9");
+        declare_id!("HDwcJBJXjL9FpJ7UBsYBtaDjsBUhuLCUYoz3zr8SWWaQ");
     } else if #[cfg(feature = "testnet")] {
         declare_id!("3u8hJUVTA4jH1wYAyUur7FFZVQ8H635K3tSHHF4ssjQ5");
     }
