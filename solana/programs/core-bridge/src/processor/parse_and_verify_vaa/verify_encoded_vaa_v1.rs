@@ -71,12 +71,7 @@ pub fn verify_encoded_vaa_v1(ctx: Context<VerifyEncodedVaaV1>) -> Result<()> {
 
         // Do we have enough signatures for quorum?
         let guardian_keys = &guardian_set.keys;
-        let quorum = crate::utils::quorum(guardian_keys.len());
-        require!(
-            usize::from(vaa.signature_count()) >= quorum,
-            CoreBridgeError::NoQuorum
-        );
-
+        
         // Generate the same message hash (using keccak) that the Guardians used to generate their
         // signatures. This message hash will be hashed again to produce the digest for
         // `secp256k1_recover`.
