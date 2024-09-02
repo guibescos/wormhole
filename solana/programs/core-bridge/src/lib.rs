@@ -80,12 +80,4 @@ pub mod wormhole_core_bridge_solana {
         processor::close_signature_set(ctx)
     }
 
-    /// Process legacy Core Bridge instructions. See [legacy](crate::legacy) for more info.
-    pub fn process_legacy_instruction(
-        program_id: &Pubkey,
-        account_infos: &[AccountInfo],
-        ix_data: &[u8],
-    ) -> Result<()> {
-        legacy::process_legacy_instruction(program_id, account_infos, ix_data)
-    }
 }

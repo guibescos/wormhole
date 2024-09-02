@@ -6,9 +6,6 @@ pub mod accounts;
 
 pub mod instruction;
 
-mod processor;
-pub(crate) use processor::*;
-
 pub mod state;
 
 pub(crate) mod utils;
