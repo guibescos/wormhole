@@ -28,7 +28,7 @@ pub use crate::{
 #[doc(inline)]
 #[cfg(feature = "cpi")]
 pub use crate::{
-    legacy::cpi::{post_message_unreliable, PostMessageUnreliable},
+    legacy::cpi::{PostMessageUnreliable},
     utils::vaa::{claim_vaa, ClaimVaa},
 };
 
@@ -38,7 +38,7 @@ pub mod io {
 
 pub mod legacy {
     pub use crate::legacy::utils::{
-        AccountVariant, LegacyAccount, LegacyAnchorized, ProcessLegacyInstruction,
+        AccountVariant, LegacyAccount, LegacyAnchorized,
     };
 }
 
