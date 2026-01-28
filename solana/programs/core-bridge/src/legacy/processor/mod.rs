@@ -10,6 +10,9 @@ pub use post_message::*;
 mod post_vaa;
 pub use post_vaa::*;
 
+mod update_guardian_set_ttl;
+pub use update_guardian_set_ttl::*;
+
 mod verify_signatures;
 pub use verify_signatures::*;
 
@@ -58,6 +61,9 @@ pub fn process_legacy_instruction(
         }
         LegacyInstruction::PostMessageUnreliable => {
             PostMessageUnreliable::process_instruction(program_id, account_infos, ix_data)
+        }
+        LegacyInstruction::UpdateGuardianSetTtl => {
+            UpdateGuardianSetTtl::process_instruction(program_id, account_infos, ix_data)
         }
     }
 }

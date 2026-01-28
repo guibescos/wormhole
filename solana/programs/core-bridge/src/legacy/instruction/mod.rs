@@ -30,6 +30,9 @@ pub enum LegacyInstruction {
     VerifySignatures,
     /// Publish a Wormhole message by either creating or reusing an existing message account.
     PostMessageUnreliable,
+    /// Update the guardian set TTL to a fixed value (86400 seconds = 24 hours).
+    /// This instruction is permissionless.
+    UpdateGuardianSetTtl,
 }
 
 /// Arguments used to initialize the Core Bridge program.
